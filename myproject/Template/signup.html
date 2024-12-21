@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{%static 'signup.js' %}"></script>
+</head>
+<style>
+
+body {
+    background-image: url('blog2.jpg');
+    background-size: cover;  /* Ensures the image covers the entire background */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0a0b0c;
+}
+
+.container {
+    background-color: #eeee;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 0 32px grey;
+    width: 800px;
+    height: auto;
+    box-shadow: 0 2px 10px rgb(236, 4, 4);
+    padding:10px;
+
+}
+
+h2{
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+h{
+    font-size: 4rem;
+    font-weight: 1000;
+    color: #6a6e7a7a;
+    margin-bottom: 20px;
+  }
+
+
+form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004085;
+    color: #fff;
+}
+
+a.btn {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: none;
+}
+
+a.btn:hover {
+    background-color: #bee5eb;
+    color: #0c5460;
+}
+</style>
+<body>
+    <title>BIG7Space - Sign Up</title>
+<div class="container mt-5">
+    <!-- Main row to center content and adjust column width based on screen size -->
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-8 col-sm-10 col-12">
+            <!-- Branding and Form Title -->
+            <h class="text-center">BIG7Space</h>
+            <h2 class="text-center mb-4">Sign Up</h2>
+            <title>BIG7Space - Sign Up</title>
+            <!-- Signup Form Container -->
+            <form method="post" id="signupForm" class="p-4 border rounded shadow-sm bg-light">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <!-- Full-width Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </div>
+                 <br>
+                <!-- Login Link Button -->
+                <div class="d-grid">
+                    <button class="btn btn-primary"><a href="http://127.0.0.1:8000/login/" class="btn btn-secondary" style="text-decoration:none; color:black;background-color:none">Login</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

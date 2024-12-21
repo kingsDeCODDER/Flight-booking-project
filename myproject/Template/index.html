@@ -1,134 +1,98 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Booking</title>
-    <link rel="stylesheet" href="{% static 'index.css'%}">
+    <title>Programming Language Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'index.js' %}"></script>
 </head>
+<style></style>
 <body>
-        <div class="title">
-            <h1>Flight Booking Online Platform</h1>
-        </div>
-        <div class="fligth-container">
-            <label for="">From :</label>
-            <select name="" id="origin">
-                <option value="">Bangkok - Thailand</option>
-            </select>
-            <label for="">Destination :</label>
-            <select name="" id="destination">
-                <option value="" id="title-destination" disabled selected hidden>Where to?</option>
-                <option value="1000">Paris - French</option>
-                <option value="2500">New York - USA</option>
-                <option value="2700">Rome - Italy</option>
-            </select>
-            <label for="">Date :</label>
-            <input placeholder="When is your trip?" type="text" onfocus="(this.type='date')" id="date">
-        </div>
-        <div class="status">
-            <ul class="showcase">
-                <li>
-                    <div class="seat"></div>
-                    <small>Availabel</small>
-                </li>
-                <li>
-                    <div class="seat selected"></div>
-                    <small>Select</small>
-                </li>
-                <li>
-                    <div class="seat occupited"></div>
-                    <small>Unavailable</small>
-                </li>
-            </ul>
-        </div>
-        <div class="container">
-            <div class="captan"></div>
-            <div class="row" id="first-row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupited"></div>
-                <div class="seat occupited"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row" id="mid-row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupited"></div>
-                <div class="seat occupited"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat occupited"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupited"></div>
-                <div class="seat occupited"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-        </div>
-        <div class="summary">
 
-            <p class="text">Price per seat : <span id="priceperseat">&nbsp;</span> USD  &nbsp; | &nbsp;
-                Seat selected :
-                <span id="count">0</span> seat  &nbsp;|&nbsp;
-                Total payment : <span id="total">0</span> USD
-                <!-- <button id="buy" class="buy">BUY</button> -->
-            </p>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">BIG7space</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'byu_page' %}">Learn Via BYU Idaho</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cpp_page' %}">wish to be an Ethical Hacker(white Hat) ?</a>
+                </li>
         </div>
-        <div class="bg"></div>
-    <script src="script.js"></script>
+    </div>
+</nav>
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+    <h3 class="display-4">Want to Learn Programming Languages Python,JavaScript,Java & lot more ?
+    </h3>
+    <p class="lead">Choose a programming language,get in touch with your instructor, and join our community.</p>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+
+    <!-- Language Selection -->
+    <div class="language-section" id="languageSection">
+        <h2 style="color:rgb(255, 255, 255);">Select a Programming Language</h2>
+        <form id="languageForm">
+            <div class="form-group mb-3">
+                <label for="languageSelect" style="color:rgb(230, 227, 238);">Choose a language:</label>
+                <select class="form-select" id="languageSelect" required style="background-color:black;">
+                    <option selected disabled style="color:rgb(238, 231, 231);">Select Language</option>
+                    <option value="python" data-url="{% url 'python_page' %}">Python</option>
+                    <option value="javascript" data-url="{% url 'javascript_page' %}">JavaScript</option>
+                    <option value="java" data-url="{% url 'java_page' %}">Java</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="languageInfo" class="mt-4"></div>
+    </div>
+
+    <!-- Contact Instructor -->
+    <div class="contact-section" id="contactSection">
+        <h2 style="color:white;"> Contact Kingsley(BIG7) </h2>
+        <form id="contactForm" method="POST" action="{% url 'contact_instructor' %}">
+            <div class="mb-3">
+                <label for="name" class="form-label" style="color:white;">Your Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label" style="color: white;">Email address</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label" style="color: white;">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+        <div id="contactResult" class="mt-4"></div>
+    </div>
+
+    <!-- WhatsApp Group -->
+    <div class="whatsapp-section" id="whatsappSection">
+
+        <p>Join our community of learners by clicking the link below:</p>
+        <a href="https://chat.whatsapp.com/EdT4KdrkNme2EqtUgPyVSq" target="_blank" class="btn btn-success">WhatsApp</a>
+        <a href="https://www.facebook.com/profile.php?id=61566575075381" target="_blank" class="btn btn-success" style="color:white;background-color: lightskyblue;">Facebook</a>
+    </div>
+
+<!-- Footer -->
+<footer>
+    <p style="color:black;">&copy; 2024 BIG7Space. All rights reserved.</p> <p style="color:black;">sponsor: TryHackMe, PathwayConnect</p>
+</footer>
+
 </body>
 </html>

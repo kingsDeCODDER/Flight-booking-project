@@ -1,165 +1,198 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Glegoo&family=Kanit&family=Roboto&family=Roboto+Slab&display=swap');
-
-*{
-    box-sizing: border-box;
-    font-family: 'Roboto Slab', serif;
-}
-
-body{
-    background-image: url(image/sky-background.jpg);
-    background-size:cover;
-    color: #444451;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+* {
     margin: 0;
-}
-.flight-container{
-    margin: 20px 0;
-}
-.page{
-    display: block;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-}
-.fligth-container select{
-    background-color: #fff;
-    border: 0.5px solid #444451;
-    border-radius: 5px;
-    font-size: 14px;
-    padding: 2px 15px 2px 15px;
-    margin-right: 15px;
-}
-.fligth-container input{
-    background-color: #fff;
-    border: 0.5px solid #444451;
-    border-radius: 5px;
-    font-size: 14px;
-    padding: 2px 15px 2px 15px;
-}
-input:focus{
-    outline: none;
-}
-#destination{
-    color: #777;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1{
-    margin: 20px 0 20px 0;
-    font-weight: bold;
+body {
+    background-image: url('img1.jpg');
+    background-size: cover;  /* Ensures the image covers the entire background */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.navbar-brand {
     font-size: 2rem;
-    padding-bottom: 20px;
+    font-weight: 900;
+    color: lightslategrey
 }
-.seat{
-    background-color: #d3d3d6;
-    height: 15px;
-    width: 17px;
-    margin: 3px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+
+.navbar-nav .nav-link {
+    color: hsl(168, 16%, 87%);
+    font-weight: 500;
+    padding: 10px 20px;
 }
-.row{
-    display: flex;
+
+.navbar-nav .nav-link.active {
+    color: #e5eaed;
 }
-.seat.selected{
-    background-color: rgb(7, 183, 7);
-}
-.seat.occupited{
-    background-color: rgb(230, 15, 15);
-}
-.seat:nth-of-type(3){
-    margin-right: 18px;
-}
-.showcase{
-    list-style: none;
-    background: rgba(0,0,0,0.02);
-    padding: 5px 10px;
+
+/* Jumbotron */
+.jumbotron {
+    background-color: #002e5d; /* Dark navy blue, similar to PathwayConnect */
+    color: #fff;
+    padding: 1rem 0;
     display: flex;
     justify-content: space-between;
-    color: #777;
-    border-radius: 5px;
-}
-.showcase li{
-    display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 10px;
 }
-.showcase li samll{
-    margin-left: 2px;
-}
-.showcase .seat:not(.occupited):hover{
-    cursor: default;
-    transform: scale(1);
-}
-.seat:not(.occupited):hover{
-    cursor: pointer;
-    transform: scale(1.2);
-}
-.container{
 
-    border: 1px solid #bfbfc5;
-    padding: 100px 5px 10px 5px;
-    border-top-left-radius: 120%;
-    border-top-right-radius: 120%;
-    border-bottom: none;
-    box-shadow: 10px 0 8px -2px rgba(0,0,0,0.05) ;
-    margin: 0;
-    background-color: #fff;
-    z-index: 10;
+.jumbotron h3 {
+    font-size: 48px;
+    font-weight: bold;
+    color:rgb(175, 165, 165);
 }
-#mid-row{
-    margin-bottom: 10px;
+
+.jumbotron p{
+    font-size: 20px;
+    color:rgb(182, 178, 178);
 }
-#first-row{
-    margin-top: 10px;
+
+/* Main Container */
+.container {
+    margin-top: 40px;
 }
-.captan{
+
+/* Video Section */
+
+.video-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(231, 6, 6, 0.1);
+}
+
+/* Language Section */
+.language-section {
+    margin-bottom: 40px;
+}
+
+.language-section h2 {
+    font-size: 28px;
+    color: #fbf5f4f7;
     margin-bottom: 20px;
 }
-p.text span{
-    color: rgb(7, 183, 7);
-    font-size: 24px;
-}
-p.text{
-    margin: 10px;
-    font-size: large;
-}
-.bg{
-    width: 80%;
-    height: 92%;
-    position: absolute;
-    background-color: rgba(255,255,255,0.8);
-    box-shadow: 10px 0 20px #777;
-    z-index: -100;
-    border-radius: 15px;
-}
-.summary{
-    padding: 0 20px;
-    background-color: #fff;
-    margin: 20px 0 -15px 0;
-    height: 3rem;
-    border-radius: 10px;
 
+.form-select {
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    color: #f0eaea;
+    padding: 10px;
+    width: 100%;
 }
-button{
-    display: inline-flex;
-    margin-left: 40px;
-    position: absolute;
-    height: 30px;
-    width: 60px;
-    padding: 5px 12px;
-    justify-items: center;
+
+.btn-primary {
+    background-color: #0095f6;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #007bb5;
+}
+
+.bt
+
+/* Contact Section */
+.contact-section h2 {
+    font-size: 28px;
+    color: #eee7e7;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #0095f6;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+/* WhatsApp Section */
+.whatsapp-section {
+    margin-bottom: 40px;
     text-align: center;
-    border-radius: 50px;
-    border-color: rgb(7, 183, 7);
-    background-color: rgb(7, 183, 7);
-    color: #fff;
-    cursor: pointer;
 }
-button:hover{
-    transform:scale(1.2);
+
+.whatsapp-section h2 {
+    font-size: 28px;
+    color: #f4eded;
+    margin-bottom: 20px;
+}
+
+.whatsapp-section p {
+    font-size: 18px;
+    color: #d1dbd9f6;
+}
+
+.btn-success {
+    background-color: #25D366;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-success:hover {
+    background-color: #20b45d;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffffff;
+    border-top: 1px solid #dbdbdb;
+    margin-top: 40px;
+}
+
+footer p {
+    color: #e1e6dc9e;
+    font-size: 14px;
+}
+
+footer h6 {
+    color: #efe5e5;
+    font-size: 14px;
+}
+
+
+.video-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.video-container h3 {
+    margin-bottom: 20px;
+}
+
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 80%;
+    background: #000;
+    border-radius:none;
+}
+
+.responsive-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100px;
+    height:auto;
+    border-radius:none;
 }
